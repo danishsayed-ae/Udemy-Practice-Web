@@ -1,4 +1,3 @@
-package Selenium;
 
 public class MethodsDemo {
 

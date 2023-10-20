@@ -1,5 +1,3 @@
-package Selenium;
-
 import java.util.ArrayList;
 
 public class Practice {
