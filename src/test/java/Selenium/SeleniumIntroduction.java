@@ -17,7 +17,7 @@ public class SeleniumIntroduction {
 		driver.findElement(By.id("emailid")).sendKeys("admin.astra");
 		driver.findElement(By.id("password")).sendKeys("Admin@1234**");
 		driver.findElement(By.id("btnLgnSubmit")).click();
-		//driver.close();
+		driver.close();
 
 	}
 
