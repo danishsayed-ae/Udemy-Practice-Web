@@ -3,6 +3,7 @@ package Selenium;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Dropdown2 {
 
@@ -14,10 +15,12 @@ public class Dropdown2 {
 		Thread.sleep(2000);
 		
 		//Either create a for loop
+		/*
 		for (int i=0;i<4;i++)
 		{
 			driver.findElement(By.id("hrefIncAdt")).click();
 		}
+		*/
 		
 		//Else create a while loop
 		int a=1;
@@ -26,11 +29,14 @@ public class Dropdown2 {
 			driver.findElement(By.id("hrefIncAdt")).click();
 			a++;
 		}
+
 		
 		
 		Thread.sleep(2000);
 		driver.findElement(By.id("btnclosepaxoption")).click();
-		driver.close();
+		System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
+		Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
+//		driver.close();
 
 	}
 
