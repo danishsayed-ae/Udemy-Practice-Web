@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.List;
 
-public class AutoSuggestedDropdown {
+public class DropdownCountry {
 
 	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.http.factory", "jdk-http-client");

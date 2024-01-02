@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Dropdown1 {
+public class DropdownCurrency {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.setProperty("webdriver.http.factory", "jdk-http-client");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://rahulshettyacademy.com/dropdownsPractise/");
@@ -18,8 +18,10 @@ public class Dropdown1 {
 		dropdown.selectByIndex(1);
 		System.out.println(dropdown.getFirstSelectedOption().getText());
 		dropdown.selectByValue("AED");
+		Thread.sleep(2000);
 		System.out.println(dropdown.getFirstSelectedOption().getText());
 		dropdown.selectByVisibleText("USD");
+		Thread.sleep(2000);
 		System.out.println(dropdown.getFirstSelectedOption().getText());
 		driver.close();
 

@@ -1,6 +1,6 @@
 package Selenium;
 
-public class CoreJavaBrushUp3 {
+public class JavaBrushUp3 {
 
 	public static void main(String[] args) {
 		//string literal
