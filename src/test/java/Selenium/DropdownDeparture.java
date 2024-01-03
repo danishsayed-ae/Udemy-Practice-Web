@@ -26,8 +26,11 @@ public class DropdownDeparture {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR'] //a[@value='JAI']")).click();
 		Thread.sleep(2000);
+
+//		For selecting the current date
 		driver.findElement(By.cssSelector(".ui-state-default.ui-state-highlight")).click();
-//		driver.close();
+		Thread.sleep(2000);
+		driver.close();
 
 		
 
