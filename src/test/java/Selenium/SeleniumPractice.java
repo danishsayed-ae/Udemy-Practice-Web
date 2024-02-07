@@ -39,6 +39,6 @@ public class SeleniumPractice {
         }*/
 
 
-//        driver.quit();
+        driver.quit();
     }
 }
