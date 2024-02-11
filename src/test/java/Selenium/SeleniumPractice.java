@@ -15,8 +15,15 @@ public class SeleniumPractice {
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         String[] itemsNeeded = {"Cucumber", "Brocolli", "Tomato", "Beans","Brinjal"};
-        int j=0;
 
+        itemNeeded(driver, itemsNeeded);
+
+//        driver.quit();
+    }
+
+    public static void itemNeeded(WebDriver driver, String[] itemsNeeded)
+    {
+        int j=0;
         List<WebElement> products = driver.findElements(By.xpath("//h4[@class='product-name']"));
         for (int i = 0; i < products.size(); i++)
         {
@@ -39,8 +46,5 @@ public class SeleniumPractice {
                 }
             }
         }
-
-
-//        driver.quit();
     }
 }
