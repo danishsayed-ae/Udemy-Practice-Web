@@ -4,7 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,12 +17,33 @@ public class SeleniumPractice {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+
+//        Implicit wait is applied globally
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+//        Explicit wait can be achieved using WebDriverWait or Fluent wait
+//        It is used to target a spcific element
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+
+//        Start
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
         String[] itemsNeeded = {"Cucumber", "Brocolli", "Tomato", "Beans","Brinjal"};
 
+//        Calling the method
         itemNeeded(driver, itemsNeeded);
+        driver.findElement(By.cssSelector("img[alt='Cart']")).click();
+        driver.findElement(By.xpath("//button[contains(text(),'PROCEED TO CHECKOUT')]")).click();
+//        targeting this element
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[placeholder='Enter promo code']")));
+        driver.findElement(By.cssSelector("input[placeholder='Enter promo code']")).sendKeys("rahulshettyacademy");
+        driver.findElement(By.xpath("//button[@class='promoBtn']")).click();
+//        targeting this element
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='promoInfo']")));
+        System.out.println(driver.findElement(By.cssSelector("span[class='promoInfo']")).getText());
 
-//        driver.quit();
+//        To close the entire browser
+        driver.quit();
+
     }
 
     public static void itemNeeded(WebDriver driver, String[] itemsNeeded)
