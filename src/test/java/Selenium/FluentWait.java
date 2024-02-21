@@ -17,16 +17,16 @@ public class FluentWait {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/1");
         driver.findElement(By.cssSelector("div[id='start'] button")).click();
 
-        Wait wait = new FluentWait(WebDriver driver)
-                .withTimeout(timeout, SECONDS)
-                .pollingEvery(timeout, SECONDS)
-                .ignoring(Exception.class);
-
-        WebElement foo=wait.until(new Function<WebDriver, WebElement>() {
-            public WebElement applyy(WebDriver driver) {
-                return driver.findElement(By.id("foo"));
-            }
-        });
+//        Wait wait = new FluentWait(WebDriver driver)
+//                .withTimeout(timeout, SECONDS)
+//                .pollingEvery(timeout, SECONDS)
+//                .ignoring(Exception.class);
+//
+//        WebElement foo=wait.until(new Function<WebDriver, WebElement>() {
+//            public WebElement applyy(WebDriver driver) {
+//                return driver.findElement(By.id("foo"));
+//            }
+//        });
 
     }
 }
