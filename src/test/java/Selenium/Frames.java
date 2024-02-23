@@ -24,11 +24,15 @@ public class Frames {
         Iterator<String> Iterator = windows.iterator();
 
 //        By default iteration is at 0th index and when we do next then it moves to the 1st index.
-        String ParentID = Iterator.next();
-        String ChildID = Iterator.next();
-        driver.switchTo().window(ChildID);
+        String parentID = Iterator.next();
+        String childID = Iterator.next();
+        driver.switchTo().window(childID);
         System.out.println(driver.findElement(By.cssSelector("p.im-para.red")).getText());
         driver.findElement(By.cssSelector("p.im-para.red"));
         String emailID = driver.findElement(By.cssSelector("p.im-para.red")).getText().split("at")[1].trim().split(" ")[0];
+        System.out.println(emailID);
+        driver.switchTo().window(parentID);
+        driver.findElement(By.id("username")).sendKeys(emailID);
+
     }
 }
