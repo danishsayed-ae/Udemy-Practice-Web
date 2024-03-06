@@ -27,7 +27,7 @@ public class Frames {
 //        To switch back to main content
         driver.switchTo().defaultContent();
         System.out.println(driver.findElement(By.cssSelector("div.demo-description")).getText());
-        
+
         driver.quit();
     }
 }

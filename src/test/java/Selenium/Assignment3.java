@@ -31,7 +31,7 @@ public class Assignment3 {
         List<WebElement> products = driver.findElements(By.xpath("//button[@class='btn btn-info']"));
         for(int i = 0; i < products.size(); i++)
         {
-            driver.findElement(By.xpath("//button[@class='btn btn-info']")).click();
+            driver.findElements(By.xpath("//button[@class='btn btn-info']")).get(i).click();
         }
         driver.findElement(By.xpath("//a[@class='nav-link btn btn-primary']")).click();
 
