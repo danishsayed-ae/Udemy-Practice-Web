@@ -26,8 +26,8 @@ public class Frames {
         a.dragAndDrop(source, target).build().perform();
 //        To switch back to main content
         driver.switchTo().defaultContent();
-
-
-//        driver.quit();
+        System.out.println(driver.findElement(By.cssSelector("div.demo-description")).getText());
+        
+        driver.quit();
     }
 }
